@@ -106,7 +106,7 @@ function selectAnswer(e) {
 function showScore(){
     resetState();
     questionElement.innerHTML = `${questions.length}問中${score} 問正解やね（by松本人志）`;
-    nextButton.innerHTML = "もう一回やっとこか。復習や（by浜田雅功）";
+    nextButton.innerHTML = "もう一周しよう！";
     nextButton.style.display = "block";
 }
 
