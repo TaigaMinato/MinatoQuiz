@@ -5,7 +5,7 @@
     box-sizing: border-box;
 }
 body{
-    background:linear-gradient(90deg, #FFCCFF,#FFCCFF ) ;
+    background:linear-gradient(90deg, #FFCCFF,#CCCCFF ) ;
 }
 .app{
     background: #fff;
