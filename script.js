@@ -1,47 +1,47 @@
 const questions = [
     {
-        question:"サピックスに入った時のクラスは？",
-        answers:[
-            {text:"アルファワン",correct:false},
-            {text:"アルファシックス",correct:false},
-            {text:"L",correct:true},
-            {text:"G",correct:false},
+        question: "サピックスに入った時のクラスは？",
+        answers: [
+            { text: "アルファワン", correct: false },
+            { text: "アルファシックス", correct: false },
+            { text: "L", correct: true },
+            { text: "G", correct: false },
         ]
     },
     {
-        question:"LINEの友達の数は？",
-        answers:[
-            {text:"53",correct:true},
-            {text:"63",correct:false},
-            {text:"88",correct:false},
-            {text:"98",correct:false},
+        question: "LINEの友達の数は？",
+        answers: [
+            { text: "53", correct: true },
+            { text: "63", correct: false },
+            { text: "88", correct: false },
+            { text: "98", correct: false },
         ]
     },
     {
-        question:"一番嫌いな芸能人は？",
-        answers:[
-            {text:"坂上忍",correct:false},
-            {text:"フワちゃん",correct:false},
-            {text:"遠藤憲一",correct:true},
-            {text:"たむけん",correct:false},
+        question: "一番嫌いな芸能人は？",
+        answers: [
+            { text: "坂上忍", correct: false },
+            { text: "フワちゃん", correct: false },
+            { text: "遠藤憲一", correct: true },
+            { text: "小籔", correct: false },
         ]
     },
     {
-        question:"家で飼ってない生き物は？",
-        answers:[
-            {text:"ヘビ",correct:false},
-            {text:"カメ",correct:false},
-            {text:"クワガタ",correct:false},
-            {text:"カブトムシ",correct:true},
+        question: "家で飼ってない生き物は？",
+        answers: [
+            { text: "ヘビ", correct: false },
+            { text: "カメ", correct: false },
+            { text: "クワガタ", correct: false },
+            { text: "カブトムシ", correct: true },
         ]
     },
     {
-        question:"そろばん検定(暗算)は何級？",
-        answers:[
-            {text:"一級",correct:false},
-            {text:"準一級",correct:true},
-            {text:"二級",correct:false},
-            {text:"準二級",correct:false},
+        question: "そろばん検定(暗算)は何級？",
+        answers: [
+            { text: "一級", correct: false },
+            { text: "準一級", correct: true },
+            { text: "二級", correct: false },
+            { text: "準二級", correct: false },
         ]
     }
 ];
@@ -95,7 +95,7 @@ function selectAnswer(e) {
         selectedBtn.classList.add("incorrect");
     }
     Array.from(answerButtons.children).forEach(button => {
-        if(button.dataset.correct === "true"){
+        if (button.dataset.correct === "true") {
             button.classList.add("correct");
         }
         button.disabled = true;
@@ -103,26 +103,26 @@ function selectAnswer(e) {
     nextButton.style.display = "block";
 }
 
-function showScore(){
+function showScore() {
     resetState();
     questionElement.innerHTML = `${questions.length}問中${score} 問正解やね（by松本人志）`;
-    nextButton.innerHTML = "もう一周しよか（by浜田雅功）";
+    nextButton.innerHTML = "もう一回やっとこか。復習や（by浜田雅功）";
     nextButton.style.display = "block";
 }
 
-function handleNextButton(){
+function handleNextButton() {
     currentQuestionIndex++;
-    if(currentQuestionIndex < questions.length){
+    if (currentQuestionIndex < questions.length) {
         showQuestion();
-    }else{
+    } else {
         showScore();
     }
 }
 
-nextButton.addEventListener("click",()=>{
-    if(currentQuestionIndex < questions.length){
+nextButton.addEventListener("click", () => {
+    if (currentQuestionIndex < questions.length) {
         handleNextButton();
-    }else{
+    } else {
         startQuiz();
     }
 });
